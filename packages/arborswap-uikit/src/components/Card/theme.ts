@@ -3,7 +3,7 @@ import { shadows } from "../../theme/base";
 import { CardTheme } from "./types";
 
 export const light: CardTheme = {
-  background: lightColors.backgroundAlt,
+  background: lightColors.background,
   boxShadow: shadows.level1,
   boxShadowActive: shadows.active,
   boxShadowSuccess: shadows.success,
@@ -14,11 +14,10 @@ export const light: CardTheme = {
     bubblegum: lightColors.gradients.bubblegum,
     violet: lightColors.gradients.violet,
   },
-  dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
 
 export const dark: CardTheme = {
-  background: darkColors.backgroundAlt,
+  background: darkColors.background,
   boxShadow: shadows.level1,
   boxShadowActive: shadows.active,
   boxShadowSuccess: shadows.success,
@@ -29,5 +28,4 @@ export const dark: CardTheme = {
     bubblegum: lightColors.gradients.bubblegum,
     violet: darkColors.gradients.violet,
   },
-  dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };

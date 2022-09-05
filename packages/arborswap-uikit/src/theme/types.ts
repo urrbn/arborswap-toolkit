@@ -72,6 +72,16 @@ export type Colors = {
   silver: string;
   bronze: string;
   roburna: string;
+
+  // added background
+  bgLight: string;
+  bgDark: string;
+  bgDarker: string;
+
+  // added text
+  textNormal: string;
+  textLight: string;
+  textDimmed: string;
 };
 
 export type ZIndices = {

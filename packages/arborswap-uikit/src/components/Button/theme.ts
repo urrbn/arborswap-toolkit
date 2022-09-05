@@ -36,6 +36,16 @@ export const styleVariants = {
     boxShadow: "none",
     color: "primary",
   },
+  [variants.HALF]: {
+    backgroundColor: "tertiary",
+    boxShadow: "none",
+    color: "warning",
+  },
+  [variants.MAX]: {
+    backgroundColor: "tertiary",
+    boxShadow: "none",
+    color: "primary",
+  },
   [variants.SUBTLE]: {
     backgroundColor: "textSubtle",
     color: "backgroundAlt",
@@ -51,6 +61,11 @@ export const styleVariants = {
   [variants.TEXT]: {
     backgroundColor: "transparent",
     color: "primary",
+    boxShadow: "none",
+  },
+  [variants.TEXTDANGER]: {
+    backgroundColor: "transparent",
+    color: "failure",
     boxShadow: "none",
   },
 };

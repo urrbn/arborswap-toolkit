@@ -20,7 +20,6 @@ export type CardTheme = {
     bubblegum: string;
     violet: string;
   };
-  dropShadow: string;
 };
 
 export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {

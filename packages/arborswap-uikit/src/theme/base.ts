@@ -36,7 +36,7 @@ const radii = {
   small: "4px",
   button: "6px",
   default: "10px",
-  card: "20px",
+  card: "10px",
   circle: "50%",
 };
 
