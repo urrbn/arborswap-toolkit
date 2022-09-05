@@ -1,13 +1,13 @@
 import { Colors } from "./types";
 
 export const baseColors = {
-  failure: "#ED4B9E",
-  primary: "#1FC7D4",
-  primaryBright: "#53DEE9",
+  failure: "#E56060",
+  primary: "#00783F",
+  primaryBright: "#00783F",
   primaryDark: "#0098A1",
   secondary: "#7645D9",
   success: "#31D0AA",
-  warning: "#FFB237",
+  warning: "#C89211",
 };
 
 export const additionalColors = {
@@ -16,25 +16,26 @@ export const additionalColors = {
   gold: "#FFC700",
   silver: "#B2B2B2",
   bronze: "#E7974D",
+  roburna: "#C89211",
 };
 
 export const lightColors: Colors = {
   ...baseColors,
   ...additionalColors,
-  background: "#FAF9FA",
-  backgroundDisabled: "#E9EAEB",
-  backgroundAlt: "#FFFFFF",
+  background: "#FFFFFF",
+  backgroundDisabled: "#F5F1EB",
+  backgroundAlt: "#FAF8F5",
   cardBorder: "#E7E3EB",
   contrast: "#191326",
   dropdown: "#F6F6F6",
   dropdownDeep: "#EEEEEE",
   invertedContrast: "#FFFFFF",
-  input: "#eeeaf4",
+  input: "#F5F1EB",
   inputSecondary: "#d7caec",
   tertiary: "#EFF4F5",
-  text: "#280D5F",
+  text: "#464754",
   textDisabled: "#BDC2C4",
-  textSubtle: "#7A6EAA",
+  textSubtle: "#807373",
   disabled: "#E9EAEB",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)",

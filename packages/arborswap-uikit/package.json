@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/uikit",
+  "name": "@arborswap/uikit",
   "version": "0.49.1",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
+  "repository": "https://github.com/wongjapan/arborswap-toolkit/tree/master/packages/arborswap-uikit",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
