@@ -17,6 +17,7 @@ import Menu from "./Menu";
 import { CogIcon, LanguageCurrencyIcon, LogoutIcon } from "../../components/Svg";
 import IconButton from "../../components/Button/IconButton";
 import { Modal, ModalProps, useModal } from "../Modal";
+import BreadCrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 export default {
   title: "Widgets/Menu",
@@ -70,6 +71,18 @@ const GlobalMenuModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) =
   </Modal>
 );
 
+const BreadcrumbCmp: React.FC = () => {
+  return (
+    <BreadCrumbs mb="32px">
+      <Link to="/" color="secondary" style={{ fontWeight: 400 }}>
+        Link
+      </Link>
+      <Text color="textDisabled">Crumb 1</Text>
+      <Text color="textDisabled">Crumb 2</Text>
+    </BreadCrumbs>
+  );
+};
+
 const GlobalMenuComponent: React.FC = () => {
   const [onPresent1] = useModal(<GlobalMenuModal title="Display Settings Modal" />);
   const [onPresent2] = useModal(<GlobalMenuModal title="Global Settings Modal" />);
@@ -102,6 +115,7 @@ const useProps = () => {
     profile: null,
     userMenu: <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />,
     globalMenu: <GlobalMenuComponent />,
+    breadcrumbMenu: <BreadcrumbCmp />,
   });
 
   useEffect(() => {
@@ -120,6 +134,7 @@ const useProps = () => {
         profile: null,
         userMenu: <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />,
         globalMenu: <GlobalMenuComponent />,
+        breadcrumbMenu: <BreadcrumbCmp />,
       });
     }, 2000);
     return () => {

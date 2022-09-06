@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { usePopper } from "react-popper";
 import styled from "styled-components";
 import Flex from "../../../../components/Box/Flex";
-import { ChevronDownIcon } from "../../../../components/Svg";
+import { EllipsisIcon } from "../../../../components/Svg";
 import isTouchDevice from "../../../../util/isTouchDevice";
 import { UserMenuProps, variants } from "./types";
 import MenuIcon from "./MenuIcon";
@@ -10,14 +10,13 @@ import { UserMenuItem } from "./styles";
 
 const StyledUserMenu = styled(Flex)`
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.tertiary};
-  border-radius: 16px;
-  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
+  background-color: ${({ theme }) => theme.colors.background};
+  border: 2px solid rgba(0, 120, 63, 0.5);
+  border-radius: 6px;
   cursor: pointer;
   display: inline-flex;
-  height: 32px;
-  padding-left: 40px;
-  padding-right: 8px;
+  height: 50px;
+  padding: 13px 10px;
   position: relative;
 
   &:hover {
@@ -40,9 +39,9 @@ const LabelText = styled.div`
 const Menu = styled.div<{ isOpen: boolean }>`
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: 16px;
-  padding-bottom: 4px;
-  padding-top: 4px;
+  border-radius: 6px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   pointer-events: auto;
   width: 280px;
   visibility: visible;
@@ -56,11 +55,11 @@ const Menu = styled.div<{ isOpen: boolean }>`
   `}
 
   ${UserMenuItem}:first-child {
-    border-radius: 8px 8px 0 0;
+    border-radius: 6px 6px 0 0;
   }
 
   ${UserMenuItem}:last-child {
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 6px 6px;
   }
 `;
 
@@ -160,7 +159,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
       <StyledUserMenu ref={setTargetRef} {...props}>
         <MenuIcon avatarSrc={avatarSrc} variant={variant} />
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
-        <ChevronDownIcon color="text" width="24px" />
+        <EllipsisIcon color="text" width="20px" marginLeft="10px" />
       </StyledUserMenu>
       <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
         {children}

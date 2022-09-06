@@ -4,7 +4,6 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Logo from "./components/Logo";
 import HamburgButton from "./components/HamburgButton";
 import Panel from "./components/Panel";
 import { NavProps } from "./types";
@@ -62,6 +61,7 @@ const MobileOnlyOverlay = styled(Overlay)`
 const Menu: React.FC<NavProps> = ({
   userMenu,
   globalMenu,
+  breadcrumbMenu,
   isDark,
   toggleTheme,
   langs,
@@ -127,7 +127,10 @@ const Menu: React.FC<NavProps> = ({
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           <StyledNav showMenu={showMenu}>
-            <HamburgButton isPushed={isPushed} togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
+            <Flex>
+              <HamburgButton isPushed={isPushed} togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
+              {breadcrumbMenu}
+            </Flex>
             <Flex>
               {globalMenu} {userMenu}
             </Flex>

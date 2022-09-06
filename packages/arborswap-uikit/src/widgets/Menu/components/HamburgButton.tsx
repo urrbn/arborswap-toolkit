@@ -9,9 +9,15 @@ interface Props {
   togglePush: () => void;
 }
 
+const StyledFlex = styled(Flex)`
+  ${({ theme }) => theme.mediaQueries.nav} {
+    display: none;
+  }
+`;
+
 const HamburgButton: React.FC<Props> = ({ isPushed, togglePush }) => {
   return (
-    <Flex>
+    <StyledFlex>
       <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
         {isPushed ? (
           <HamburgerCloseIcon width="24px" color="textSubtle" />
@@ -19,7 +25,7 @@ const HamburgButton: React.FC<Props> = ({ isPushed, togglePush }) => {
           <HamburgerIcon width="24px" color="textSubtle" />
         )}
       </MenuButton>
-    </Flex>
+    </StyledFlex>
   );
 };
 
