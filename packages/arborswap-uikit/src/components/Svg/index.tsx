@@ -103,6 +103,7 @@ export { default as WalletIcon } from "./Icons/Wallet";
 export { default as WalletArborIcon } from "./Icons/WalletArbor";
 export { default as WalletFilledIcon } from "./Icons/WalletFilled";
 export { default as WaitIcon } from "./Icons/Wait";
+export { default as ArrowLeftIcon } from "./Icons/ArrowLeft";
 export { default as TradeIcon } from "./Icons/Trade";
 export { default as DashboardIcon } from "./Icons/Dashboard";
 export { default as StakingIcon } from "./Icons/Staking";

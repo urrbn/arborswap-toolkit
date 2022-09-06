@@ -5,6 +5,7 @@ import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import HamburgButton from "./components/HamburgButton";
+import HamburgButtonFixed from "./components/HamburgButtonFixed";
 import Panel from "./components/Panel";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
@@ -42,10 +43,12 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
+  z-index: 1;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
     max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
+    z-index: 20;
   }
 `;
 
@@ -129,6 +132,10 @@ const Menu: React.FC<NavProps> = ({
           <StyledNav showMenu={showMenu}>
             <Flex>
               <HamburgButton isPushed={isPushed} togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
+              <HamburgButtonFixed
+                isPushed={isPushed}
+                togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+              />
               {breadcrumbMenu}
             </Flex>
             <Flex alignItems="center">
