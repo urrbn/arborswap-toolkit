@@ -131,7 +131,7 @@ const Menu: React.FC<NavProps> = ({
               <HamburgButton isPushed={isPushed} togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
               {breadcrumbMenu}
             </Flex>
-            <Flex>
+            <Flex alignItems="center">
               {globalMenu} {userMenu}
             </Flex>
           </StyledNav>

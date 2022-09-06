@@ -20,6 +20,7 @@ export const variants = {
   HALF: "half",
   MAX: "max",
   TABS: "tabs",
+  PRIMARYALT: "primary-alt",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
