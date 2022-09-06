@@ -3,13 +3,10 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../../components/Svg";
 import Flex from "../../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "../icons";
-import MenuButton from "./MenuButton";
+import { LogoIcon as LogoWithText } from "../icons";
 
 interface Props {
   isPushed: boolean;
-  isDark: boolean;
-  togglePush: () => void;
   href: string;
 }
 
@@ -19,20 +16,15 @@ const blink = keyframes`
 `;
 
 const StyledLink = styled(Link)`
+  padding-top: 20px;
   display: flex;
   align-items: center;
   .mobile-icon {
     width: 32px;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: none;
-    }
   }
   .desktop-icon {
+    margin: 0 auto;
     width: 160px;
-    display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
-    }
   }
   .right-eye {
     animation-delay: 20ms;
@@ -48,35 +40,23 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+const Logo: React.FC<Props> = ({ isPushed, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = (
-    <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
-    </>
-  );
-
+  console.log("isPushed :", isPushed);
+  console.log("isAbsoluteUrl :", isAbsoluteUrl);
   return (
     <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
-        {isPushed ? (
-          <HamburgerCloseIcon width="24px" color="textSubtle" />
-        ) : (
-          <HamburgerIcon width="24px" color="textSubtle" />
-        )}
-      </MenuButton>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
-          {innerLogo}
+        <StyledLink as="a" href={href} aria-label="Arborswap home page">
+          {isPushed ? <LogoWithText className="desktop-icon" /> : <LogoIcon className="mobile-icon" />}
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
-          {innerLogo}
+        <StyledLink to={href} aria-label="Arborswap home page">
+          {isPushed ? <LogoWithText className="desktop-icon" /> : <LogoIcon className="mobile-icon" />}
         </StyledLink>
       )}
     </Flex>
   );
 };
 
-export default React.memo(Logo, (prev, next) => prev.isPushed === next.isPushed && prev.isDark === next.isDark);
+export default React.memo(Logo, (prev, next) => prev.isPushed === next.isPushed);

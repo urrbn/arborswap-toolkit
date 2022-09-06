@@ -19,6 +19,7 @@ export const variants = {
   TEXTDANGER: "text-danger",
   HALF: "half",
   MAX: "max",
+  TABS: "tabs",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];

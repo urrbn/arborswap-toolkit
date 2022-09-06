@@ -9,23 +9,25 @@ interface StyledButtonTabsProps extends ButtonTabsProps {
 }
 
 const getBackgroundColor = ({ theme, variant }: StyledButtonTabsProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "input" : "tertiary"];
+  return theme.colors[variant === variants.SUBTLE ? "bgLight" : "bgLight"];
 };
 
 const getBorderColor = ({ theme, variant }: StyledButtonTabsProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "inputSecondary" : "disabled"];
+  return theme.colors[variant === variants.SUBTLE ? "bgLight" : "bgLight"];
 };
 
 const StyledButtonTabs = styled.div<StyledButtonTabsProps>`
   background-color: ${getBackgroundColor};
-  border-radius: 16px;
+  border-radius: 10px 10px 0 0;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
-  border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
 
   & > button,
   & > a {
     flex: ${({ fullWidth }) => (fullWidth ? 1 : "auto")};
+  }
+  & :hover {
+    /* border-radius: 10px; */
   }
 
   & > button + button,
