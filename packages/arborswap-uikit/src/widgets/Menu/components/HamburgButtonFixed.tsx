@@ -4,13 +4,15 @@ import Flex from "../../../components/Box/Flex";
 import { HamburgerCloseIcon } from "../icons";
 import { ArrowLeftIcon } from "../../../components/Svg";
 import MenuButtonFixed from "./MenuButtonFixed";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
 
 interface Props {
   isPushed: boolean;
+  showMenu: boolean;
   togglePush: () => void;
 }
 
-const StyledFlex = styled(Flex)`
+const StyledFlex = styled(Flex)<{ showMenu: boolean }>`
   display: none;
   position: absolute;
   left: -30px;
@@ -20,9 +22,9 @@ const StyledFlex = styled(Flex)`
   }
 `;
 
-const HamburgButtonFixed: React.FC<Props> = ({ togglePush }) => {
+const HamburgButtonFixed: React.FC<Props> = ({ showMenu, togglePush }) => {
   return (
-    <StyledFlex>
+    <StyledFlex showMenu={showMenu}>
       <MenuButtonFixed aria-label="Toggle menu" onClick={togglePush} mr="24px">
         <ArrowLeftIcon width="24px" color="primary" />
       </MenuButtonFixed>

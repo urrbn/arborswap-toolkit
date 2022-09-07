@@ -63,6 +63,13 @@ const Menu = styled.div<{ isOpen: boolean }>`
   }
 `;
 
+const ElipsisIconDiv = styled.div`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    display: block;
+  }
+`;
+
 const UserMenu: React.FC<UserMenuProps> = ({
   account,
   text,
@@ -159,7 +166,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
       <StyledUserMenu ref={setTargetRef} {...props}>
         <MenuIcon avatarSrc={avatarSrc} variant={variant} />
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
-        <EllipsisIcon color="primary" width="20px" marginLeft="10px" />
+        <ElipsisIconDiv>
+          <EllipsisIcon color="primary" width="20px" marginLeft="10px" />
+        </ElipsisIconDiv>
       </StyledUserMenu>
       <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
         {children}

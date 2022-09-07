@@ -59,9 +59,12 @@ const PanelFooter: React.FC<Props> = ({
   if (!isPushed) {
     return (
       <Container>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
-        </IconButton>
+        <SocialEntry>
+          <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
+        </SocialEntry>
+        <SocialEntry>
+          <CakePrice cakePriceUsd={cakePriceUsd} />
+        </SocialEntry>
       </Container>
     );
   }
