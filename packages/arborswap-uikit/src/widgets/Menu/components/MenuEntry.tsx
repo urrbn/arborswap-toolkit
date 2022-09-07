@@ -7,6 +7,7 @@ import { MENU_ENTRY_HEIGHT } from "../config";
 export interface Props {
   secondary?: boolean;
   isActive?: boolean;
+  isPushed?: boolean;
   theme: DefaultTheme;
 }
 
@@ -22,21 +23,21 @@ const rainbowAnimation = keyframes`
 
 const LinkLabel = styled.div<{ isPushed: boolean }>`
   color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
+  display: ${({ isPushed }) => (isPushed ? "block" : "none")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
 
 const MenuEntry = styled.div<Props>`
   cursor: pointer;
+
   display: flex;
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
-
+  padding: ${({ secondary }) => (secondary ? "0 16px 0 64px" : "0 16px 0 32px")};
+  font-size: ${({ secondary }) => (secondary ? "16px" : "16px")};
+  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.backgroundAlt : "transparent")};
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textDimmed)};
   a {
     display: flex;
     align-items: center;
@@ -45,11 +46,14 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textDimmed)};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.primary};
+    svg {
+      fill: ${({ theme }) => theme.colors.primary};
+    }
   }
 
   // Safari fix
@@ -67,8 +71,9 @@ MenuEntry.defaultProps = {
   isActive: false,
 };
 
-const LinkStatus = styled(Text)<{ color: keyof Colors }>`
+const LinkStatus = styled(Text)<{ color: keyof Colors; isPushed: boolean }>`
   border-radius: ${({ theme }) => theme.radii.default};
+  display: ${({ isPushed }) => (isPushed ? "block" : "none")};
   padding: 0 8px;
   border: 2px solid;
   border-color: ${({ theme, color }) => theme.colors[color]};

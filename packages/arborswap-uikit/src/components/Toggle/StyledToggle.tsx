@@ -12,12 +12,12 @@ const scaleKeyValues = {
     toggleWidth: "36px",
   },
   md: {
-    handleHeight: "26px",
-    handleWidth: "26px",
+    handleHeight: "20px",
+    handleWidth: "20px",
     handleLeft: "3px",
     handleTop: "3px",
-    checkedLeft: "calc(100% - 30px)",
-    toggleHeight: "32px",
+    checkedLeft: "calc(100% - 24px)",
+    toggleHeight: "26px",
     toggleWidth: "56px",
   },
   lg: {
@@ -73,9 +73,9 @@ export const Input = styled.input<InputProps>`
 
 const StyledToggle = styled.div<ToggleProps>`
   align-items: center;
-  background-color: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
+  background: ${({ theme }) => theme.colors.gradients.toggle};
   border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.shadows.inset};
+  /* box-shadow: ${({ theme }) => theme.shadows.inset}; */
   cursor: pointer;
   display: inline-flex;
   height: ${getScale("toggleHeight")};

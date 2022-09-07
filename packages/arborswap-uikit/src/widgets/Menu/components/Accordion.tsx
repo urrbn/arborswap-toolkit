@@ -58,7 +58,7 @@ const Accordion: React.FC<Props> = ({
         {icon}
         <LinkLabel isPushed={isPushed}>{label}</LinkLabel>
         {status && (
-          <LinkStatusComponent color={status.color} fontSize="14px">
+          <LinkStatusComponent color={status.color} isPushed={isPushed} fontSize="14px">
             {status.text}
           </LinkStatusComponent>
         )}

@@ -34,6 +34,18 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
+const CopyrightEntry = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${MENU_ENTRY_HEIGHT}px;
+  padding: 0 16px;
+  font-size: 10px;
+  line-height: 120%;
+  color: ${({ theme }) => theme.colors.textDimmed};
+  text-align: center;
+`;
+
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
@@ -57,13 +69,16 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <SocialEntry>
+        <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
         <CakePrice cakePriceUsd={cakePriceUsd} />
+      </SocialEntry>
+      <SocialEntry>
         <SocialLinks />
       </SocialEntry>
-      <SettingsEntry>
-        <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-        <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
-      </SettingsEntry>
+
+      <CopyrightEntry>
+        <span>@2022 Arborswap. All right Reserved. </span>
+      </CopyrightEntry>
     </Container>
   );
 };

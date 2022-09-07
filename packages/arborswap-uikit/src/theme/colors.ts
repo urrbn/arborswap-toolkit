@@ -45,6 +45,7 @@ export const lightColors: Colors = {
     violet: "linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)",
     violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
+    toggle: "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #F5F1EB",
   },
   // added background
   bgLight: "#F2F3F5",
@@ -54,7 +55,7 @@ export const lightColors: Colors = {
   // added text
   textNormal: "#464754",
   textLight: "#807373",
-  textDimmed: "#807373",
+  textDimmed: "#A69F9F",
 };
 
 export const darkColors: Colors = {
@@ -85,6 +86,7 @@ export const darkColors: Colors = {
     violet: "linear-gradient(180deg, #6C4999 0%, #6D4DB2 100%)",
     violetAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
+    toggle: "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #2E2C28",
   },
   bgLight: "#F2F3F5",
   bgDark: "#FAF8F5",
