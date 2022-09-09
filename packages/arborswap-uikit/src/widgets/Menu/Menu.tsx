@@ -32,7 +32,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isPushed: boolean }>`
   }
 
   padding-left: 8px;
-  background-color: ${({ theme }) => theme.colors.bgLight};
+  background-color: ${({ theme }) => theme.colors.bgWrapper};
   padding-right: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
@@ -42,7 +42,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isPushed: boolean }>`
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
-  background-color: ${({ theme }) => theme.colors.bgLight};
+  background-color: ${({ theme }) => theme.colors.bgWrapper};
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`

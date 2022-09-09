@@ -32,9 +32,9 @@ const Slider: React.FC<SliderProps> = ({
   if (progressPercentage <= 10) {
     progressWidth = `${progressPercentage + 0.5}%`;
   } else if (progressPercentage >= 90) {
-    progressWidth = `${progressPercentage - 4}%`;
+    progressWidth = `${progressPercentage}%`;
   } else if (progressPercentage >= 60) {
-    progressWidth = `${progressPercentage - 2.5}%`;
+    progressWidth = `${progressPercentage}%`;
   } else {
     progressWidth = `${progressPercentage}%`;
   }

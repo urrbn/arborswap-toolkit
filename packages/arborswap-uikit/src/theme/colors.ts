@@ -51,6 +51,7 @@ export const lightColors: Colors = {
   bgLight: "#F2F3F5",
   bgDark: "#FAF8F5",
   bgDarker: "#F5F1EB",
+  bgWrapper: "#F2F3F5",
 
   // added text
   textNormal: "#464754",
@@ -61,8 +62,8 @@ export const lightColors: Colors = {
 export const darkColors: Colors = {
   ...baseColors,
   ...additionalColors,
-  secondary: "#9A6AFF",
-  background: "#08060B",
+  secondary: "#827C75",
+  background: "#202226",
   backgroundDisabled: "#3c3742",
   backgroundAlt: "#27262c",
   cardBorder: "#383241",
@@ -70,13 +71,13 @@ export const darkColors: Colors = {
   dropdown: "#1E1D20",
   dropdownDeep: "#100C18",
   invertedContrast: "#191326",
-  input: "#372F47",
+  input: "#2E2C28",
   inputSecondary: "#262130",
   primaryDark: "#0098A1",
   tertiary: "#353547",
-  text: "#F4EEFF",
+  text: "#EEF1F8",
   textDisabled: "#666171",
-  textSubtle: "#B8ADD2",
+  textSubtle: "#827C75",
   disabled: "#524B63",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
@@ -88,9 +89,10 @@ export const darkColors: Colors = {
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     toggle: "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #2E2C28",
   },
-  bgLight: "#F2F3F5",
-  bgDark: "#FAF8F5",
-  bgDarker: "#F5F1EB",
+  bgLight: "#2E2C28",
+  bgDark: "#202226",
+  bgDarker: "#17181A",
+  bgWrapper: "#17181A",
 
   // added text
   textNormal: "#464754",
