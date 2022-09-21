@@ -52,6 +52,7 @@ export const lightColors: Colors = {
   bgDark: "#FAF8F5",
   bgDarker: "#F5F1EB",
   bgWrapper: "#F2F3F5",
+  bgTabs: "#FAF8F5",
 
   // added text
   textNormal: "#464754",
@@ -93,6 +94,7 @@ export const darkColors: Colors = {
   bgDark: "#202226",
   bgDarker: "#17181A",
   bgWrapper: "#17181A",
+  bgTabs: "#242322",
 
   // added text
   textNormal: "#464754",

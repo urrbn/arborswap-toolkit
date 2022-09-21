@@ -79,6 +79,7 @@ export type Colors = {
   bgDark: string;
   bgDarker: string;
   bgWrapper: string;
+  bgTabs: string;
 
   // added text
   textNormal: string;

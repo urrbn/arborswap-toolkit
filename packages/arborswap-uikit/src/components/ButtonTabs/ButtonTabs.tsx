@@ -9,11 +9,11 @@ interface StyledButtonTabsProps extends ButtonTabsProps {
 }
 
 const getBackgroundColor = ({ theme, variant }: StyledButtonTabsProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "bgLight" : "bgLight"];
+  return theme.colors[variant === variants.SUBTLE ? "bgTabs" : "bgTabs"];
 };
 
 const getBorderColor = ({ theme, variant }: StyledButtonTabsProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "bgLight" : "bgLight"];
+  return theme.colors[variant === variants.SUBTLE ? "bgTabs" : "bgTabs"];
 };
 
 const StyledButtonTabs = styled.div<StyledButtonTabsProps>`
@@ -32,7 +32,8 @@ const StyledButtonTabs = styled.div<StyledButtonTabsProps>`
 
   & > button + button,
   & > a + a {
-    margin-left: 2px; // To avoid focus shadow overlap
+    /* To avoid focus shadow overlap */
+    margin-left: 2px;
   }
 
   & > button,
@@ -47,7 +48,7 @@ const StyledButtonTabs = styled.div<StyledButtonTabsProps>`
 
         & > button:disabled {
           background-color: transparent;
-          color: ${variant === variants.PRIMARY ? theme.colors.primary : theme.colors.textSubtle};
+          color: ${variant === variants.PRIMARY ? theme.colors.textSubtle : theme.colors.textSubtle};
         }
     `;
     }
