@@ -75,7 +75,9 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                       isPushed={isPushed}
                     >
                       <MenuLink href={item.href}>
-                        <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
+                        <LinkLabel isActive={item.href === location.pathname} isPushed={isPushed}>
+                          {item.label}
+                        </LinkLabel>
                         {item.status && (
                           <LinkStatus isPushed={isPushed} color={item.status.color} fontSize="14px">
                             {item.status.text}

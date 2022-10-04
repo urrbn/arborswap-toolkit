@@ -21,11 +21,14 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
+const LinkLabel = styled.div<{ isActive: boolean; isPushed: boolean }>`
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   display: ${({ isPushed }) => (isPushed ? "block" : "none")};
   transition: color 0.4s;
   flex-grow: 1;
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 const MenuEntry = styled.div<Props>`
