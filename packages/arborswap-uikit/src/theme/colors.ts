@@ -8,6 +8,7 @@ export const baseColors = {
   secondary: "#7645D9",
   success: "#31D0AA",
   warning: "#C89211",
+  white: "#FFFFFF",
 };
 
 export const additionalColors = {
@@ -46,6 +47,7 @@ export const lightColors: Colors = {
     violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     toggle: "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #F5F1EB",
+    roburna: " linear-gradient(93.1deg, #00783F -14.09%, #C89211 123.87%);",
   },
   // added background
   bgLight: "#F2F3F5",
@@ -89,6 +91,7 @@ export const darkColors: Colors = {
     violetAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
     gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     toggle: "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #2E2C28",
+    roburna: " linear-gradient(93.1deg, #00783F -14.09%, #C89211 123.87%);",
   },
   bgLight: "#2E2C28",
   bgDark: "#202226",

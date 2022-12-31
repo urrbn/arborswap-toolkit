@@ -42,8 +42,8 @@ const StyledLink = styled(Link)`
 
 const Logo: React.FC<Props> = ({ isPushed, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
-  console.log("isPushed :", isPushed);
-  console.log("isAbsoluteUrl :", isAbsoluteUrl);
+  // console.log("isPushed :", isPushed);
+  // console.log("isAbsoluteUrl :", isAbsoluteUrl);
   return (
     <Flex>
       {isAbsoluteUrl ? (

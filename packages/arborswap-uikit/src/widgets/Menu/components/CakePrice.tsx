@@ -8,7 +8,7 @@ interface Props {
   cakePriceUsd?: number;
 }
 
-const PriceLink = styled.a`
+const PriceLink = styled.div`
   display: flex;
   align-items: center;
   border-radius: 14px;
@@ -27,12 +27,9 @@ const PriceLink = styled.a`
 
 const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
   return cakePriceUsd ? (
-    <PriceLink
-      href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
-      target="_blank"
-    >
+    <PriceLink>
       <LogoRoundIcon width="18px" height="32px" mr="8px" />
-      <Text color="#FFFFFF" bold>{`$${cakePriceUsd.toFixed(2)}`}</Text>
+      <Text color="#FFFFFF" bold>{`$${cakePriceUsd.toFixed(4)}`}</Text>
     </PriceLink>
   ) : (
     <Skeleton width={80} height={24} />

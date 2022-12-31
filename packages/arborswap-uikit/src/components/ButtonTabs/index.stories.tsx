@@ -5,6 +5,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import Box from "../Box/Box";
 import ButtonTabs from "./ButtonTabs";
 import ButtonTabsItem from "./ButtonTabsItem";
+import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 
 const Row = styled.div`
   margin-bottom: 32px;
@@ -31,7 +32,7 @@ export const Default: React.FC = () => {
     <>
       <Row>
         <ButtonTabs activeIndex={index} onItemClick={handleClick}>
-          <ButtonTabsItem>Button 1</ButtonTabsItem>
+          <ButtonTabsItem icons={<AutoRenewIcon />}>Button 1</ButtonTabsItem>
           <ButtonTabsItem>Button 2</ButtonTabsItem>
           <ButtonTabsItem>Button 3</ButtonTabsItem>
         </ButtonTabs>
@@ -66,13 +67,13 @@ export const AsLinks: React.FC = () => {
   return (
     <Row>
       <ButtonTabs activeIndex={0}>
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 1
         </ButtonTabsItem>
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 2
         </ButtonTabsItem>
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 3
         </ButtonTabsItem>
       </ButtonTabs>
@@ -138,13 +139,13 @@ export const FullWidthMenu: React.FC = () => {
         <ButtonTabsItem>Button 4</ButtonTabsItem>
       </ButtonTabs>
       <ButtonTabs activeIndex={index} fullWidth scale="sm" variant="subtle">
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 1
         </ButtonTabsItem>
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 2
         </ButtonTabsItem>
-        <ButtonTabsItem as="a" href="https://pancakeswap.finance">
+        <ButtonTabsItem as="a" href="#">
           Link 3
         </ButtonTabsItem>
       </ButtonTabs>

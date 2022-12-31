@@ -2,7 +2,9 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import PanIcon from "./PanIcon";
 import PancakeIcon from "./PancakeIcon";
-import { SpinnerProps } from "./types";
+import { SpinnerProps, ContentProps } from "./types";
+
+import SpinnerGif from "./spinner.gif";
 
 const rotate = keyframes`
   from {
@@ -42,11 +44,18 @@ const FloatingPanIcon = styled(PanIcon)`
   transform: translate3d(0, 0, 0);
 `;
 
+const Content = styled.div<ContentProps>`
+  /* border: 1px solid #000; */
+  background-image: url(${SpinnerGif});
+  background-size: cover;
+  width: ${({ width }) => width};
+  height: ${({ width }) => width};
+`;
+
 const Spinner: React.FC<SpinnerProps> = ({ size = 128 }) => {
   return (
     <Container>
-      <RotatingPancakeIcon width={`${size * 0.5}px`} />
-      <FloatingPanIcon width={`${size}px`} />
+      <Content width={`${size}px`} />
     </Container>
   );
 };

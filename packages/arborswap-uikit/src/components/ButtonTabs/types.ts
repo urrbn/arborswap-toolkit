@@ -4,6 +4,8 @@ import { BaseButtonProps, Scale, variants } from "../Button/types";
 
 export interface ButtonTabsItemProps extends BaseButtonProps {
   isActive?: boolean;
+  icons?: ReactElement;
+  children?: React.ReactNode;
 }
 
 export interface ButtonTabsProps extends SpaceProps {
